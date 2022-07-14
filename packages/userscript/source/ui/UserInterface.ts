@@ -59,18 +59,21 @@ export class UserInterface {
 
     optionsElement.append(optionsTitleElement);
 
+    const engineListElement = this._engineUi.element.children("#items-list-engine");
+
+    engineListElement.append(this._bonfireUi.element);
+    engineListElement.append(this._distributeUi.element);
+    engineListElement.append(this._unlockUi.element);
+    engineListElement.append(this._craftUi.element);
+    engineListElement.append(this._tradingUi.element);
+    engineListElement.append(this._religionUi.element);
+    engineListElement.append(this._spaceUi.element);
+    engineListElement.append(this._timeUi.element);
+    engineListElement.append(this._timeCtrlUi.element);
+    engineListElement.append(this._optionsUi.element);
+    engineListElement.append(this._filterUi.element);
+
     optionsListElement.append(this._engineUi.element);
-    optionsListElement.append(this._bonfireUi.element);
-    optionsListElement.append(this._distributeUi.element);
-    optionsListElement.append(this._unlockUi.element);
-    optionsListElement.append(this._craftUi.element);
-    optionsListElement.append(this._tradingUi.element);
-    optionsListElement.append(this._religionUi.element);
-    optionsListElement.append(this._spaceUi.element);
-    optionsListElement.append(this._timeUi.element);
-    optionsListElement.append(this._timeCtrlUi.element);
-    optionsListElement.append(this._optionsUi.element);
-    optionsListElement.append(this._filterUi.element);
 
     // Set up the "show activity summary" area.
     const activityBox = $("<div/>", {

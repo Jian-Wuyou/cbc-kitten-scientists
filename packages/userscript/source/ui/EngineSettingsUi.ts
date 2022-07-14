@@ -44,6 +44,30 @@ export class EngineSettingsUi extends SettingsSectionUi<EngineSettings> {
       }
     });
 
+    const list = $("<ul/>", {
+      id: `items-list-${toggleName}`,
+      css: { display: "none", paddingLeft: "0px", paddingTop: "4px" },
+    });
+
+    const itemsElement = this._getItemsToggle(toggleName);
+    element.append(itemsElement);
+
+    itemsElement.on("click", () => {
+      list.toggle();
+
+      this._itemsExpanded = !this._itemsExpanded;
+
+      itemsElement.text(this._itemsExpanded ? "-" : "+");
+      itemsElement.prop(
+        "title",
+        this._itemsExpanded ? this._host.i18n("ui.itemsHide") : this._host.i18n("ui.itemsShow")
+      );
+    });
+
+    label.on("click", () => itemsElement.trigger("click"));
+
+    element.append(list);
+
     this.element = element;
   }
 
